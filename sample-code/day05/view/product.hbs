@@ -1,0 +1,9 @@
+<ul>
+  {{#each products }}
+    <li>
+      {{@index}}. {{ name }} - {{ price }}
+    </li>
+  {{else}}
+    <li>No products!</li>
+  {{/each}}
+</ul>

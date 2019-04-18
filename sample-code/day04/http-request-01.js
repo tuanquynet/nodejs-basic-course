@@ -1,8 +1,8 @@
 const https = require('https');
 const options = {
-  hostname: 'mp3.zing.vn',
+  hostname: 'tiki.vn',
   port: 443,
-  path: '',
+  path: '/',
   method: 'GET'
 };
 
@@ -17,3 +17,5 @@ const req = https.request(options, res => {
 req.on('error', error => {
   console.error(error);
 });
+
+req.end();

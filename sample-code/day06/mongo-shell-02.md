@@ -1,3 +1,4 @@
+```javascript
 // refer to a collection (it may or may not exist):
 db.collectionName;
 db.getCollection('collectionName');
@@ -16,3 +17,4 @@ db.collectionName.findOne(/* { query object } */);
 db.collectionName.drop();
 // remove database completely
 db.dropDatabase();
+```

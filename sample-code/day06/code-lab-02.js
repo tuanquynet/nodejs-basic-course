@@ -1,6 +1,8 @@
+const fs = require('fs');
+
 function readFilePromise(path) {
   return new Promise((resolve, reject) => {
-    false.readFile(path, (err, data) => {
+    fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         return reject(err);
       }
@@ -8,3 +10,9 @@ function readFilePromise(path) {
     });
   });
 }
+
+readFilePromise('./package.json')
+  .then(data => {
+    console.log('data');
+    console.log(data);
+  });

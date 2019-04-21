@@ -1,3 +1,4 @@
+```javascript
 // find all document
 db.products.find({});
 
@@ -13,3 +14,4 @@ db.products.find({ salePrice: { $gte: 500, $lte: 600 } });
 db.products.find({ $or: [{ categoryId: 'men' }, { salePrice: 610 }] }, { categoryId: true, salePrice: true });
 // $and assumed
 db.products.find({ categoryId: 'accessories', salePrice: { $gt: 600 } });
+```

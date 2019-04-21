@@ -1,4 +1,4 @@
-/* eslint-disable any */
+```javascript
 // show help
 help
 // check current database
@@ -9,3 +9,4 @@ show dbs
 use <dbname>
 // list all existing collection
 show collections
+```

@@ -1,14 +1,22 @@
 // callback pyramid of doom:
 // prettier-ignore
+let doSomething = (successCallback, failCallback) => successCallback('doSomething');
+let doSomethingElse = (input, successCallback, failCallback) => successCallback('doSomethingElse');
+let doThirdThing = (input, successCallback, failCallback) => successCallback('doThirdThing');
+
 doSomething(function(result) {
   doSomethingElse(result, function(newResult) {
     doThirdThing(newResult, function(finalResult) {
         console.log('Got the final result: ' + finalResult);
-      }, failureCallback);
-    }, failureCallback);
-}, failureCallback);
+      }, function failureCallback() {});
+    }, function failureCallback() {});
+}, function failureCallback() {});
 
 // Promise way:
+doSomething = async () => ('doSomething');
+doSomethingElse = async (input) => ('doSomethingElse');
+doThirdThing = async (input) => ('doThirdThing');
+
 doSomething()
   .then(function(result) {
     return doSomethingElse(result);
@@ -19,7 +27,7 @@ doSomething()
   .then(function(finalResult) {
     console.log('Got the final result: ' + finalResult);
   })
-  .catch(failureCallback);
+  .catch(function failureCallback() {});
 
 // shorter with Arrow function
 doSomething()
@@ -28,4 +36,4 @@ doSomething()
   .then(finalResult => {
     console.log(`Got the final result: ${finalResult}`);
   })
-  .catch(failureCallback);
+  .catch(function failureCallback() {});

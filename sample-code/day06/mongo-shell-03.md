@@ -6,7 +6,10 @@ db.products.find({});
 db.products.find({ categoryId: 'women' });
 
 // using query operators
-db.products.find({ categoryId: { $in: ['men', 'women'] } }, { name: true, shortDescription: true, categoryId: true });
+db.products.find(
+	{ categoryId: { $in: ['men', 'women'] } }, 
+	{ name: true, shortDescription: true, categoryId: true }
+);
 db.products.find({ salePrice: { $gte: 500, $lte: 600 } });
 
 // using logical operator

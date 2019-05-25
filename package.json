@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-basic-sample-code",
+  "version": "1.0.0",
+  "description": "sample code of nodejs basic course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch sample-code index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuanquynet/nodejs-basic-course.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Quy Tran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuanquynet/nodejs-basic-course/issues"
+  },
+  "homepage": "https://github.com/tuanquynet/nodejs-basic-course#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}

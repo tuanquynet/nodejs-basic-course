@@ -1,5 +1,7 @@
+
+
 const fs = require('fs');
-fs.stat('test.txt', (err, stats) => {
+fs.stat('../../package.json', (err, stats) => {
   if (err) {
     console.error(err);
 return; }

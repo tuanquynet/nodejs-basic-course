@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch sample-code index.js"
+    "start": "nodemon --watch sample-code index.js",
+    "debug-day08": "nodemon --watch sample-code index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "mongoose": "^5.5.13",
+    "nodemon": "^1.19.1",
     "request": "^2.88.0"
   }
 }

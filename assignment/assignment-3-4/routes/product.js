@@ -19,7 +19,7 @@ router.get('/products', function(req, res, next) {
 
 /* GET product listing. */
 router.get('/products/:productId', function(req, res, next) {
-	const {productId} = req.params || {};
+		const {productId} = req.params || {};
 
 	ProductModel
 		.findOne({_id: productId})

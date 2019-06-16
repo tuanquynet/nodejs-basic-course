@@ -1,21 +1,51 @@
-var products = require('../data/products.json');
-var categories = require('../data/categories.json');
-var users = require('../data/users.json');
+// const products = require('../data/products.json');
+const categories = require('../data/categories.json');
+const users = require('../data/users.json');
+const ProductModel = require('../models/product');
+const UserModel = require('../models/user');
+const CategoryModel = require('../models/category');
+
+const countProduct = async () => {
+  return ProductModel.count().exec();
+};
+
+const countUser = async () => {
+  return UserModel.count().exec();
+};
+
+const countCategory = async () => {
+  return CategoryModel.count().exec();
+};
 
 exports.getAdminPage = (req, res) => {
-  res.render('admin', {
-    productsTotal: products.body.length,
-    categoriesTotal: categories.body.length,
-    usersTotal: users.body.length,
-    ordersTotal: 0
-  });
+  Promise
+    .all([
+      countProduct(),
+      countUser(),
+      countCategory(),
+    ])
+    .then(([productsTotal, categoriesTotal, usersTotal]) => {
+      res.render('admin', {
+        productsTotal: products.body.length,
+        categoriesTotal: categories.body.length,
+        usersTotal: users.body.length,
+        ordersTotal: 0
+      });
+    });
 }
 
 //Total
 exports.getProductsPage = (req, res) => {
-  res.render('products', {
-    products: products.body
-  });
+  ProductModel
+    .find({})
+    .limit(50)
+    .exec()
+    .then((products) => {
+      res.render('products', {
+        products,
+      });
+    });
+ 
 }
 
 exports.getCategoriesPage = (req, res) => {

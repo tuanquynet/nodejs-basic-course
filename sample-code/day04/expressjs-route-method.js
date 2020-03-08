@@ -9,14 +9,19 @@ app.get('/', function(req, res) {
   res.send('GET request to the homepage');
 });
 
+// Example: GET method route
+app.post('/', function(req, res) {
+  res.send('POST request to the homepage');
+});
+
 // Example: POST method route
 app.get('/products', function(req, res) {
-  res.json({name: 'bag'});
+  res.json({products: [{name: 'bag'}]});
 });
 
 // Example: POST method route
 app.post('/products', function(req, res) {
-  res.json({name: 'bag'});
+  res.json({product: {name: 'bag'}});
 });
 
 

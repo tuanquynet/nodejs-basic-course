@@ -1,6 +1,3 @@
-
-
-
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
@@ -16,7 +13,8 @@ app.get('/shopping-cart', (req, res) => {
 
 // read cookie from client
 app.get('/checkout', (req, res) => {
-  res.send(`cookie ${req.headers.cookie}`);
+  // res.send(`cookie ${req.headers.cookie}`);
+  res.send(`cookie ${JSON.stringify(req.cookies)}`);
 });
 
 app.listen(port, () => console.log(`App is listening on port ${port}!`));

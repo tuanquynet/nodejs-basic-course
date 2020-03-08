@@ -1,7 +1,7 @@
 // callback
 function doSomethingAsyncWithCallback(successCallback, errorCallback) {
-	const exception = 'Unknown exception';
-	// const exception = null;
+	// const exception = 'Unknown exception';
+	const exception = null;
 
 	if (!exception) {
 		successCallback({});

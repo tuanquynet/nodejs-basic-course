@@ -13,6 +13,6 @@ app.get('/booking/:from-:to', function(req, res) {
   res.send(req.params);
 });
 
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
 

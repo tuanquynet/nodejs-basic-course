@@ -29,6 +29,12 @@ mongoose
   .then(() => {
 		users = users.body.map(record => ({...record, _id: new mongoose.mongo.ObjectId()}));
 
+		users = users.map(user => {
+			user.roles = Array.isArray(user.roles) ? user.roles : [user.roles];
+
+			return user;
+		});
+		
 		categories = categories.body.map(record => ({...record}));
 
 		return Promise.all([

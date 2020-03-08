@@ -19,7 +19,7 @@
       "username": "admin",
       "email": "admin@nordiccoder.com",
       "emailVerified": true,
-      "role": "admin"
+      "roles": "admin"
     },
     {
       "_id": "002",
@@ -34,7 +34,7 @@
       "username": "thanhtran",
       "email": "thanh.tran@nordiccoder.com",
       "emailVerified": true,
-      "role": "instructor"
+      "roles": "instructor"
     },
     {
       "_id": "003",
@@ -49,7 +49,7 @@
       "username": "thientuong",
       "email": "tuong.lam@nordiccoder.com",
       "emailVerified": true,
-      "role": "user"
+      "roles": "user"
     },
     {
       "_id": "004",
@@ -64,7 +64,7 @@
       "username": "ducanh",
       "email": "anh.tu@nordiccoder.com",
       "emailVerified": true,
-      "role": "user"
+      "roles": "user"
     },
     {
       "_id": "005",
@@ -79,7 +79,7 @@
       "username": "nhutien",
       "email": "tien.nguyen@nordiccoder.com",
       "emailVerified": true,
-      "role": "user"
+      "roles": "user"
     },
     {
       "_id": "006",
@@ -94,7 +94,7 @@
       "username": "anhquoc",
       "email": "quoc.cao@nordiccoder.com",
       "emailVerified": true,
-      "role": "user"
+      "roles": "user"
     }
   ],
   "pagination": {

@@ -1,3 +1,4 @@
+// module.exports is object
 module.exports = {
 	languages: ['en', 'vi', 'fr'],
 }

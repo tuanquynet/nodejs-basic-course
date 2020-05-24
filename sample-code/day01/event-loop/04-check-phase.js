@@ -18,6 +18,8 @@ setImmediate(() => {
     console.log(`#${++count} run via setTimeout`)
   }, 0);
 
+  // we are at `immediate phase` but setImmediate statement will not executed right away at this phase 
+  // it will be processed in next loop
   setImmediate(() => {
     console.log(`#${++count} run via setImmediate`)
   });
@@ -31,7 +33,7 @@ setImmediate(() => {
   })
 
   // read files in async will happen at Poll phase
-  fs.readFile('./no-data', () => {
+  fs.readFile('./sample-code/data/no-data-file', () => {
     console.log(`#${++count} read file completely`);
   })
 })

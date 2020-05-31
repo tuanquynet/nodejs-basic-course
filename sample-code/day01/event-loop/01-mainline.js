@@ -7,10 +7,15 @@ const fs = require('fs');
   // micro task, handled at right after NodeJS finish the processing phase but after process.nextTick
   Promise.resolve('done')
     .then(() => {
-      console.log(`#${++count} run via promise`)
+      console.log(`#${++count} promise resolve`)
     })
     .then(() => {
-      console.log(`#${++count} run via promise`)
+      console.log(`#${++count} promise resolve`)
+    })
+  
+  Promise.reject('fail')
+    .catch(() => {
+      console.log(`#${++count} promise reject`)
     })
   
   // macro task but less priority, handled at timers phase

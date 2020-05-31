@@ -6,8 +6,8 @@ app.get('/about', function(req, res) {
 app.get('/post/:id', function(req, res) {
 	let postData;
 	Posts.findOne({ id: req.params.id }, function(err, result) {
-	// !!! asynchronous
-	postData = result;
+		// !!! asynchronous
+		postData = result;
 	});
 	res.render('post', postData);
 });

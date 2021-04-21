@@ -1,4 +1,5 @@
 const express = require('express');
+const hbs = require('hbs');
 
 const app = express();
 const port = 3000;
@@ -7,6 +8,8 @@ const port = 3000;
 app.set('view engine', 'hbs');
 // optionally set the views folder, default app.set('views', './views');
 app.set('views', __dirname + '/views');
+
+hbs.registerPartials(`${__dirname}/views/partials`);
 
 // render a view, with the view template ‘./views/index.hbs’
 app.get('/', (req, res) => {

@@ -13,22 +13,22 @@ module.exports = {
 	   });
  },
  loadProducts: () => {
-		Product.find({})
+		return Product.find({})
+			.populate('category', 'name')
 			.populate('categoryId', 'name')
 			.limit(5)
-			.exec()
+			// .exec()
 			.then((results) => {
-			console.log('Results');
-			console.log(results);
+				console.log('Results');
+				console.log(JSON.stringify(results));
 			});
  },
  loadCategories: () => {
 		return Category.find({})
 			.limit(5)
-			.exec()
 			.then((results) => {
 				console.log('Results');
-				console.log(results);
+				console.log(JSON.stringify(results));
 
 				return results;
 			});
